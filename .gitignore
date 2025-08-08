@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+out-tsc/
+
+# Temporary files
+tmp/
+temp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs e editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.log
+
+# Angular specific
+.angular/cache/
+
+# Environment files
+src/environments/*.ts
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Compiled files
+*.class
+*.jar
+
+# Others
+coverage/
+
