@@ -1,0 +1,73 @@
+<div class="f" id="mainContent">
+  <div class="w-max">
+    <div class="f jc-c">
+      <div
+        class="timer-display"
+        [contentEditable]="canEdit()"
+        [innerText]="formatTime(minutes)"
+        (input)="onTimeEdit($event, 'minutes')"
+        (click)="selectContent($event)"
+      ></div>
+
+      <span>:</span>
+
+      <div
+        class="timer-display"
+        [contentEditable]="canEdit()"
+        [innerText]="formatTime(seconds)"
+        (input)="onTimeEdit($event, 'seconds')"
+        (click)="selectContent($event)"
+      ></div>
+    </div>
+
+    <div class="controls f jc-c g-md">
+      <button class="btn btn-action" (click)="startOrPause()">
+        @if(isRunning) {
+        <lucide-icon name="pause" />
+        } @else {
+        <lucide-icon name="play" />
+        }
+      </button>
+
+      @if(isRunning) {
+      <button class="btn btn-action" (click)="resetTimer()">
+        <lucide-icon name="square" />
+      </button>
+      }
+    </div>
+  </div>
+
+  <div class="w-min" id="configContent">
+    <div class="f fc jc-c sideConfig">
+      <select
+        id="pomodoroSelect"
+        [(ngModel)]="currentConfigName"
+        (change)="onConfigChange()"
+        class="pomodoro-select"
+        [disabled]="!canEdit()"
+      >
+        @for (config of pomodoroConfig; track config.name) {
+        <option [value]="config.name">
+          {{ config.name }} - {{ config.concentrationTime }}min/{{
+            config.pauseTime
+          }}min
+        </option>
+        }
+      </select>
+
+      <div class="f fc">
+        @for (config of currentTimerConfig; track $index) {
+        <button
+          class="btn btn-step"
+          (click)="setStep($index)"
+          [class.step-done]="currentStep > $index"
+        >
+          {{ config.min.toString().padStart(2, "0") }} :
+          {{ config.sec.toString().padStart(2, "0") }}
+        </button>
+        <br />
+        }
+      </div>
+    </div>
+  </div>
+</div>

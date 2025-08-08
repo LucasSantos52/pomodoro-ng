@@ -1,0 +1,280 @@
+* {
+  font-family: "roboto", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* Tema claro */
+.light-theme {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Tema escuro */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-component {
+  padding-top: 1rem;
+}
+
+label {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+span {
+  font-size: 10rem;
+  font-weight: bold;
+  display: inline-block;
+  transform: translateY(-10%);
+}
+
+select {
+  cursor: pointer;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+}
+
+.btn {
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.btn-theme {
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 2rem;
+}
+
+.btn-action {
+  border-radius: 0.4rem;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+}
+
+.btn-step {
+  min-width: 6rem;
+  min-height: 2rem;
+  cursor: pointer;
+  border: none;
+}
+
+.step-done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.modal {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.close-btn {
+  color: var(--text-color);
+  background: var(--bg-color);
+  border-radius: 2rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.timer-display {
+  font-size: 10rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-align: center;
+  user-select: none;
+}
+
+[contenteditable]:focus {
+  outline: 2px dashed var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.sideConfig {
+  margin-top: 2rem;
+}
+
+li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+/* configurações baseadas no tema atual */
+
+.light-theme .btn-action:hover {
+  filter: brightness(0.95);
+}
+.dark-theme .btn-action:hover {
+  filter: brightness(2);
+}
+.light-theme .btn-step:hover {
+  filter: brightness(0.95);
+}
+.dark-theme .btn-step:hover {
+  filter: brightness(2);
+}
+.light-theme .btn-theme:hover {
+  filter: brightness(0.95);
+}
+.dark-theme .btn-theme:hover {
+  filter: brightness(2);
+}
+.light-theme .close-btn:hover {
+  filter: brightness(0.95);
+}
+.dark-theme .close-btn:hover {
+  filter: brightness(2);
+}
+.light-theme select:hover {
+  filter: brightness(0.95);
+}
+.dark-theme select:hover {
+  filter: brightness(2);
+}
+/* Custom styles */
+.w-min {
+  width: 20%;
+}
+
+.w-max {
+  width: 100%;
+}
+
+.h-max {
+  height: 100%;
+}
+
+.f {
+  display: flex;
+}
+.fc {
+  flex-direction: column;
+}
+
+.jc-c {
+  justify-content: center;
+}
+.jc-s {
+  justify-content: start;
+}
+.jc-e {
+  justify-content: end;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-se {
+  justify-content: space-evenly;
+}
+
+.ac {
+  align-items: center;
+}
+
+.g-xs {
+  gap: 0.25rem;
+}
+.g-sm {
+  gap: 0.5rem;
+}
+.g-md {
+  gap: 1rem;
+}
+.g-lg {
+  gap: 2rem;
+}
+
+.m-sm {
+  margin: 0.5rem;
+}
+.m-md {
+  margin: 1rem;
+}
+.m-lg {
+  margin: 2rem;
+}
+.my {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 800px) {
+  #mainContent {
+    flex-direction: column;
+  }
+
+  #configContent {
+    width: 100%;
+  }
+
+  select {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  span {
+    font-size: 8rem;
+  }
+
+  .timer-display {
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    user-select: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  span {
+    font-size: 6rem;
+  }
+
+  .timer-display {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    user-select: none;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  span {
+    font-size: 4rem;
+  }
+
+  .timer-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    user-select: none;
+  }
+}

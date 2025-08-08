@@ -1,0 +1,21 @@
+<div class="f ac jc-sb header-component">
+  <label>Pomodoro</label>
+
+  <div class="f g-xs">
+    <button class="btn btn-theme" (click)="openModal()">
+      <lucide-icon name="Info" />
+    </button>
+
+    <button class="btn btn-theme" (click)="toggleTheme()">
+      @if(DarkTheme) {
+      <lucide-icon name="sun" />
+      } @else {
+      <lucide-icon name="moon" />
+      }
+    </button>
+  </div>
+</div>
+
+@if(isModalOpen){
+<app-modal-info (close)="closeModal()"></app-modal-info>
+}
